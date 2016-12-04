@@ -1,0 +1,1 @@
+**Model of back propagation neural network with adaptive learning step and normalized weights**
