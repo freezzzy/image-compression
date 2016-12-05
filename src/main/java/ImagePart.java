@@ -5,19 +5,15 @@ import java.util.List;
 
 public class ImagePart {
 
-    private int height;
-    private int width;
     private int startX;
     private int startY;
     private List<Double> vectorX;
     private Matrix X;
 
-    public ImagePart(int startX, int startY, int width, int height) {
+    public ImagePart(int startX, int startY) {
         vectorX = new ArrayList<>();
         this.startX = startX;
         this.startY = startY;
-        this.width = width;
-        this.height = height;
     }
 
     public void createMatrixX() {

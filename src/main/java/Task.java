@@ -36,7 +36,7 @@ public class Task {
         while (x < imageWidth) {
             int y = 0;
             while (y < imageHeight) {
-                ImagePart vector = new ImagePart(x, y, n, m);
+                ImagePart vector = new ImagePart(x, y);
                 for (int i = x; i < x + n; i++) {
                     for (int j = y; j < y + m; j++) {
                         if (i < imageWidth && j < imageHeight) {
@@ -109,9 +109,8 @@ public class Task {
                 X_ = Y.times(W_);
                 E += getError(X, X_);
             }
-            System.out.println("Итерация: " + iteration + "; Ошибка: " + E);
+            System.out.println("\nИтерация: " + iteration + "; Ошибка: " + E);
             printMatrix(W);
-            System.out.println('\n');
             printMatrix(W_);
             iteration++;
         }

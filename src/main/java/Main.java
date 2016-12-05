@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static int RGB_COLORS_COUNT = 3;
-    public static BufferedImage DEFAULT_IMAGE;
+    final static int RGB_COLORS_COUNT = 3;
+    static BufferedImage DEFAULT_IMAGE;
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in, "UTF-8");
         Parameters parameters = new Parameters();
 
         try {
