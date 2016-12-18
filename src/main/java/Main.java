@@ -28,7 +28,7 @@ public class Main {
         System.out.println("Введите число нейронов на втором слое:");
         parameters.setP(sc.nextInt());
 
-        System.out.println("Введите допустимое значение среднеквадратичной ошибки:");
+        System.out.println("Введите максимальную допустимую ошибку:");
         parameters.setError(Double.valueOf(sc.next()));
 
         parameters.update();

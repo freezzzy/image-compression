@@ -30,6 +30,7 @@ public class Task {
         this.p = p;
     }
 
+    // Создание эталонных векторов
     public int decomposeImage() {
         partsList = new ArrayList<>();
         int x = 0;
@@ -69,6 +70,7 @@ public class Task {
         init();
     }
 
+    // Создание матрицы весов
     private void createWeightMatrix() {
         double bufferW[][] = new double[n * m * Main.RGB_COLORS_COUNT][p];
         for (int i = 0; i < n * m * Main.RGB_COLORS_COUNT; i++) {
@@ -78,10 +80,11 @@ public class Task {
         }
         W = new Matrix(bufferW);
         W_ = W.transpose();
-        normalize(W);
-        normalize(W_);
+//        normalize(W);
+//        normalize(W_);
     }
 
+    // Обучение
     private void init() {
         int iteration = 1;
         double E = Double.MAX_VALUE;
@@ -110,8 +113,6 @@ public class Task {
                 E += getError(X, X_);
             }
             System.out.println("\nИтерация: " + iteration + "; Ошибка: " + E);
-            printMatrix(W);
-            printMatrix(W_);
             iteration++;
         }
     }
@@ -124,6 +125,7 @@ public class Task {
         return e;
     }
 
+    // Нормирование матрицы весов
     private void normalize(Matrix matrix) {
         for (int i = 0; i < matrix.getRowDimension(); i++) {
             double sum = 0;
@@ -157,7 +159,8 @@ public class Task {
         return sum;
     }
 
-    public BufferedImage createOutputImage(){
+    // Восстановление изображения
+    public BufferedImage createOutputImage() {
         BufferedImage answer = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_3BYTE_BGR);
         for (ImagePart currVector : partsList){
             Matrix X = currVector.getX();
