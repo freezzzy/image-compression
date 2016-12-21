@@ -14,7 +14,7 @@ public class Main {
         Parameters parameters = new Parameters();
 
         try {
-            DEFAULT_IMAGE = ImageIO.read(new File("img/input.jpg"));
+            DEFAULT_IMAGE = ImageIO.read(new File("img/demo2.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
